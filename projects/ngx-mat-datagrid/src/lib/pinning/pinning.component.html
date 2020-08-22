@@ -1,0 +1,8 @@
+<button (click)="pinOrUnpinRowOrColumn()" dense mat-icon-button>
+  <mat-icon
+    [@pinOrUnpinRowOrColumn]="pinned ? 'pin' : 'unpin'"
+    [color]="pinned ? 'primary' : null"
+    inline="inline">
+    push_pin
+  </mat-icon>
+</button>
