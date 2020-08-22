@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-mat-datagrid": [
+        "dist/ngx-mat-datagrid/ngx-mat-datagrid",
+        "dist/ngx-mat-datagrid"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
