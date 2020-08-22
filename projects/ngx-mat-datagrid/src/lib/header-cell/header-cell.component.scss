@@ -1,0 +1,29 @@
+$header-cell-padding: 12px;
+ngx-mat-datagrid-header-cell-tooltip {
+  white-space: pre-line;
+}
+
+.ngx-mat-datagrid-header-cell-text {
+  flex: 0 1 100%;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ngx-mat-datagrid-header-cell-container {
+  align-items: center;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, .54);
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: inherit;
+  overflow: hidden;
+  padding-left: $header-cell-padding;
+  padding-right: $header-cell-padding;
+  word-wrap: break-word;
+  height: 100%;
+}
+
+ngx-mat-datagrid-header-cell ngx-mat-datagrid-pinning {
+  flex: 0 0 auto;
+}

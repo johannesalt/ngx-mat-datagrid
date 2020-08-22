@@ -1,0 +1,32 @@
+<div
+  (matSortChange)="sortChange.emit($event)"
+  (resizing)="resizing($event)"
+  [enableGhostResize]="false"
+  [matSortActive]="idOfMostRecentlySortedSortable"
+  [matSortDirection]="sortDirection"
+  [resizeCursorPrecision]="10"
+  [resizeEdges]="{top: false, right: resizable, bottom: false, left: false}"
+  class="ngx-mat-datagrid-header-cell-container"
+  matSort
+  mwlResizable>
+
+  <div
+    [disabled]="!sortable"
+    [mat-sort-header]="name"
+    class="ngx-mat-datagrid-header-cell-text">
+    <span
+      [matTooltipDisabled]="(headerTooltip || '').length === 0"
+      [matTooltipShowDelay]="1000"
+      [matTooltip]="headerTooltip"
+      matTooltipClass="ngx-mat-datagrid-header-tooltip">
+      {{headerText}}
+    </span>
+  </div>
+
+  <ngx-mat-datagrid-pinning
+    (pin)="pin.emit()"
+    (unpin)="unpin.emit()"
+    *ngIf="!disablePinning"
+    [pinned]="pinned">
+  </ngx-mat-datagrid-pinning>
+</div>
