@@ -7,6 +7,8 @@ ngx-mat-datagrid-header-cell-tooltip {
   flex: 0 1 100%;
   font-size: 12px;
   font-weight: 500;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .ngx-mat-datagrid-header-cell-container {
@@ -22,6 +24,10 @@ ngx-mat-datagrid-header-cell-tooltip {
   padding-right: $header-cell-padding;
   word-wrap: break-word;
   height: 100%;
+}
+
+.ngx-mat-datagrid-header-cell-sortable {
+  flex: 0 0 auto;
 }
 
 ngx-mat-datagrid-header-cell ngx-mat-datagrid-pinning {

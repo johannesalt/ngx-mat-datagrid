@@ -1,0 +1,25 @@
+ngx-mat-datagrid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+ngx-mat-datagrid .toolbar {
+  display: flex;
+  background-color: white;
+  justify-content: flex-end;
+}
+
+ngx-mat-datagrid ngx-mat-datagrid-header-row,
+ngx-mat-datagrid ngx-mat-datagrid-filter-row {
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+ngx-mat-datagrid cdk-virtual-scroll-viewport {
+  overflow-x: hidden;
+  height: 100%;
+}

@@ -10,17 +10,60 @@
   matSort
   mwlResizable>
 
+  <mat-form-field
+    [matTooltipDisabled]="(headerTooltip || '').length === 0"
+    [matTooltipShowDelay]="1000"
+    [matTooltip]="headerTooltip"
+    appearance="standard"
+    class="ngx-mat-datagrid-header-cell-text">
+    <mat-label>{{headerText}}</mat-label>
+
+    <button mat-icon-button matPrefix [matMenuTriggerFor]="operators">
+      C
+    </button>
+
+    <mat-menu #operators>
+      <button mat-menu-item>
+        Contains
+      </button>
+      <button mat-menu-item>
+        Does Not Contains
+      </button>
+      <button mat-menu-item>
+        Starts With
+      </button>
+      <button mat-menu-item>
+        Ends With
+      </button>
+      <button mat-menu-item>
+        Equals
+      </button>
+      <button mat-menu-item>
+        Does Not Equal
+      </button>
+      <button mat-menu-item>
+        Greater Than
+      </button>
+      <button mat-menu-item>
+        Greater Than Or Equal To
+      </button>
+      <button mat-menu-item>
+        Less Than
+      </button>
+      <button mat-menu-item>
+        Less Than Or Equal To
+      </button>
+    </mat-menu>
+
+    <label>
+      <input matInput #input />
+    </label>
+  </mat-form-field>
+
   <div
     [disabled]="!sortable"
     [mat-sort-header]="name"
-    class="ngx-mat-datagrid-header-cell-text">
-    <span
-      [matTooltipDisabled]="(headerTooltip || '').length === 0"
-      [matTooltipShowDelay]="1000"
-      [matTooltip]="headerTooltip"
-      matTooltipClass="ngx-mat-datagrid-header-tooltip">
-      {{headerText}}
-    </span>
+    class="ngx-mat-datagrid-header-cell-sortable">
   </div>
 
   <ngx-mat-datagrid-pinning

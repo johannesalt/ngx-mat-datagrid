@@ -1,9 +1,7 @@
 import {Directive, HostBinding, Input} from '@angular/core';
 
 @Directive({
-  selector: 'ngx-mat-datagrid-header-cell[ngxMatDataGridCellWidth], ' +
-    'ngx-mat-datagrid-cell[ngxMatDataGridCellWidth], ' +
-    'ngx-mat-datagrid-footer-cell[ngxMatDataGridCellWidth]'
+  selector: '[ngxMatDataGridCellWidth]'
 })
 export class CellWidthDirective {
 
