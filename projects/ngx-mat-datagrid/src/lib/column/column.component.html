@@ -1,16 +1,16 @@
 <ng-template #header>
   <ngx-mat-datagrid-header-cell
-    (sortChange)="sortChange.emit($event)"
     (resized)="resized($event)"
+    (sortChange)="sortChange.emit($event)"
+    [disablePinning]="disablePinning"
     [headerClasses]="headerClasses"
     [headerText]="headerText"
     [headerTooltip]="headerTooltip"
     [idOfMostRecentlySortedSortable]="idOfMostRecentlySortedSortable"
     [name]="name"
+    [resizable]="resizable"
     [sortDirection]="sortDirection"
     [sortable]="sortable"
-    [resizable]="resizable"
-    [disablePinning]="disablePinning"
     [width]="width"
     ngxMatDataGridCellWidth>
   </ngx-mat-datagrid-header-cell>
@@ -18,8 +18,8 @@
 
 <ng-template #cell let-element>
   <ngx-mat-datagrid-cell
-    [name]="name"
     [element]="element"
+    [name]="name"
     [width]="width"
     ngxMatDataGridCellWidth>
   </ngx-mat-datagrid-cell>

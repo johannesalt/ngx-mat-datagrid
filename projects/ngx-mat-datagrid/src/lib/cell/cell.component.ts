@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ContentChild, HostBinding, Input, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, HostBinding, Input, ViewEncapsulation} from '@angular/core';
 import {isObservable} from 'rxjs';
 import {CellTemplateDirective} from '../cell-template/cell-template.directive';
 
@@ -7,7 +7,10 @@ import {CellTemplateDirective} from '../cell-template/cell-template.directive';
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '(click)': 'selectCell()'
+  }
 })
 export class CellComponent<T> {
 
@@ -41,4 +44,12 @@ export class CellComponent<T> {
    * @param obj The object to test.
    */
   public objectIsAnObservable = (obj: any) => isObservable(obj);
+
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
+  }
+
+  public selectCell() {
+    this.selected = !this.selected;
+    this.changeDetectorRef.detectChanges();
+  }
 }

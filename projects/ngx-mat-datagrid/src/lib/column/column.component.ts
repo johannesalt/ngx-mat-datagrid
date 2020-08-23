@@ -44,12 +44,6 @@ export class ColumnComponent implements OnInit {
   public headerCell: TemplateRef<any>;
 
   /**
-   * Reference to the filter cell template.
-   */
-  @ViewChild('filterCell', {static: true})
-  public filterCell: TemplateRef<any>;
-
-  /**
    * Reference to the cell template.
    */
   @ViewChild('cell', {static: true})
