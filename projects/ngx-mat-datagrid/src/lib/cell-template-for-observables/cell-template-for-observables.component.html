@@ -1,0 +1,13 @@
+<div *ngIf="loading" class="loading">
+  <mat-spinner [diameter]="20"></mat-spinner>
+</div>
+
+<ng-container *ngIf="!loading">
+  <ng-container
+    *ngTemplateOutlet="(cellTemplate?.templateRef || defaultCellTemplate); context: {$implicit:value, element: element}">
+  </ng-container>
+</ng-container>
+
+<ng-template #defaultCellTemplate let-value ngxMatDataGridCellTemplate>
+  {{value}}
+</ng-template>
