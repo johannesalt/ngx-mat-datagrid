@@ -1,4 +1,13 @@
-import {ChangeDetectionStrategy, Component, ContentChild, HostBinding, Input, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ContentChild,
+  HostBinding,
+  HostListener,
+  Input,
+  ViewEncapsulation
+} from '@angular/core';
 import {isObservable} from 'rxjs';
 import {CellTemplateDirective} from '../cell-template/cell-template.directive';
 
@@ -34,7 +43,7 @@ export class CellComponent<T> {
    */
   @Input()
   @HostBinding('class.selected')
-  public selected: boolean = false;
+  public selected = false;
 
   /**
    * Tests to see if the object is an observable.

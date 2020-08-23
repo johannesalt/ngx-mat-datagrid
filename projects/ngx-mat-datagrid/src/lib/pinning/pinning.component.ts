@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -27,24 +27,21 @@ export class PinningComponent {
 
   /**
    * Value indicating whether the column is pinned.
-   * @memberOf PinningComponent
    */
   @Input()
   public pinned = false;
 
   /**
    * Event emitted when the user pin the column.
-   * @memberOf PinningComponent
    */
   @Output()
-  public pin: EventEmitter<void> = new EventEmitter<void>()
+  public pin: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * Event emitted when the user unpin the column.
-   * @memberOf PinningComponent
    */
   @Output()
-  public unpin: EventEmitter<void> = new EventEmitter<void>()
+  public unpin: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * Pin or unpin the column/row.

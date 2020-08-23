@@ -38,7 +38,7 @@ describe('PinningComponent', () => {
     component.pinned = false;
     from(component.pin).subscribe(() => done());
     component.pinOrUnpinRowOrColumn();
-  })
+  });
 
   it('should be unpinned', () => {
     component.pinned = true;
@@ -50,5 +50,5 @@ describe('PinningComponent', () => {
     component.pinned = true;
     from(component.unpin).subscribe(() => done());
     component.pinOrUnpinRowOrColumn();
-  })
+  });
 });

@@ -25,7 +25,7 @@ export class CellTemplateForObservablesComponent<TValue, T> implements OnInit, O
   /**
    * Value indicating whether the system is waiting for the value.
    */
-  public loading: boolean = false;
+  public loading = false;
 
   /**
    * Current cell value.
@@ -35,13 +35,11 @@ export class CellTemplateForObservablesComponent<TValue, T> implements OnInit, O
   /**
    * An observable for an observable. Looks ugly? By this we can simply replace the observable with a new value, without
    * make sure that the we unsubscribe from previous value.
-   * @private
    */
   private observable$: ReplaySubject<Observable<TValue>> = new ReplaySubject<Observable<TValue>>();
 
   /**
    * Used to unsubscribe from all subscriptions if component get destroyed.
-   * @private
    */
   private destroy$: Subject<void> = new Subject<void>();
 
