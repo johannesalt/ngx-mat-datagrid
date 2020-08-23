@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "ngxMatDatagridDemo",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "ngx-mat-datagrid-demo",
+      "kebab-case"
+    ]
+  }
+}
