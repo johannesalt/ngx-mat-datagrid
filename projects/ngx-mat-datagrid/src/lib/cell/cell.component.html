@@ -1,0 +1,17 @@
+<ng-content></ng-content>
+<ng-container *ngIf="objectIsAnObservable(element[name]); else noObservable">
+  <ngx-mat-datagrid-cell-template-for-observables
+    [observable]="element[name]"
+    [cellTemplate]="cellTemplate"
+    [element]="element">
+  </ngx-mat-datagrid-cell-template-for-observables>
+</ng-container>
+
+<ng-template #noObservable>
+  <ng-container *ngTemplateOutlet="(cellTemplate?.templateRef || defaultCellTemplate); context: {$implicit: element[name], element: element}">
+  </ng-container>
+</ng-template>
+
+<ng-template #defaultCellTemplate let-value ngxMatDataGridCellTemplate>
+  {{value}}
+</ng-template>
