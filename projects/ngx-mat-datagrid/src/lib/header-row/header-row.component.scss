@@ -1,0 +1,26 @@
+$header-row-height: 56px;
+ngx-mat-datagrid-header-row {
+  // Define a border style, but then widths default to 3px. Reset them to 0px except the bottom
+  // which should be 1px;
+  background: white;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, .12);
+  box-sizing: border-box;
+  min-height: $header-row-height;
+
+  // Workaround for https://goo.gl/pFmjJD in IE 11. Adds a pseudo
+  // element that will stretch the row the correct height. See:
+  // https://connect.microsoft.com/IE/feedback/details/802625
+  &::after {
+    display: inline-block;
+    min-height: inherit;
+    content: '';
+  }
+}
+
+ngx-mat-datagrid-header-row,
+ngx-mat-datagrid-header-row > div {
+  display: flex;
+}
