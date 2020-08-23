@@ -1,0 +1,14 @@
+<ngx-mat-datagrid-header-row (matSortChange)="sortChanged($event)" matSort >
+  <ng-container *ngFor="let columnDef of visibleColumns">
+    <ng-container *ngTemplateOutlet="columnDef.headerCell"></ng-container>
+    <mat-divider [vertical]="true"></mat-divider>
+  </ng-container>
+</ngx-mat-datagrid-header-row>
+
+<cdk-virtual-scroll-viewport itemSize="48" orientation="vertical">
+  <ngx-mat-datagrid-row *cdkVirtualFor="let element of dataSource">
+    <ng-container *ngFor="let columnDef of visibleColumns">
+      <ng-container *ngTemplateOutlet="columnDef.cell; context: {$implicit: element}"></ng-container>
+    </ng-container>
+  </ngx-mat-datagrid-row>
+</cdk-virtual-scroll-viewport>

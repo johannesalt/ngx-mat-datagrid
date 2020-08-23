@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgxMatDatagridComponent } from './ngx-mat-datagrid.component';
 
 describe('NgxMatDatagridComponent', () => {
-  let component: NgxMatDatagridComponent;
-  let fixture: ComponentFixture<NgxMatDatagridComponent>;
+  let component: NgxMatDatagridComponent<any>;
+  let fixture: ComponentFixture<NgxMatDatagridComponent<any>>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
