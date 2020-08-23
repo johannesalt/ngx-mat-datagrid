@@ -1,0 +1,30 @@
+$row-height: 48px;
+ngx-mat-datagrid-row {
+  display: inline-flex;
+
+  // Define a border style, but then widths default to 3px. Reset them to 0px except the bottom
+  // which should be 1px;
+  background: white;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, .12);
+  align-items: center;
+  box-sizing: border-box;
+  min-height: $row-height;
+  min-width: 100%;
+
+  // Workaround for https://goo.gl/pFmjJD in IE 11. Adds a pseudo
+  // element that will stretch the row the correct height. See:
+  // https://connect.microsoft.com/IE/feedback/details/802625
+  &::after {
+    display: inline-block;
+    min-height: inherit;
+    content: '';
+  }
+}
+
+ngx-mat-datagrid-row,
+ngx-mat-datagrid-row > div {
+  display: flex;
+}
